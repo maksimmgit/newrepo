@@ -7,18 +7,25 @@ public class CalculatorWithOperator {
     public double divide(double a, double b){
         return a/b;
     }
+
+
     public double mult(double a, double b){
         return a*b;
     }
+
 
     public double subt(double a, double b){
 
         return 0;
     }
+
+
     public double addition(double a, double b){
 
         return a+b;
     }
+
+
 
     /**
      *  @param a
@@ -49,7 +56,7 @@ public class CalculatorWithOperator {
      * @param a
      * @param b
      */
-    public static double root(double a, double b){
+    public double root(double a, double b){
         if(a<0 && b%2 == 0){
             System.out.println("Ошибка");
             return 0;
