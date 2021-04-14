@@ -27,11 +27,6 @@ public class CalculatorWithCounterClassicMain {
         System.out.println(operation5);
         System.out.println(calc1.count);
 
-        /*
-        Не совсем понял как вынести каждую операцию в отдельный метод без создания кучи объектов.
-
-         */
-
     }
 
 
