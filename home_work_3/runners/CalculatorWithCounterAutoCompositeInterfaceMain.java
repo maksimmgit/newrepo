@@ -1,18 +1,15 @@
 package home_work_3.runners;
-
-import home_work_3.calcs.additional.CalculatorWithCounterAutoComposite;
+import home_work_3.calcs.additional.CalculatorWithCounterAutoCompositeInterface;
 import home_work_3.calcs.simple.CalculatorWithMathCopy;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 import java.util.Scanner;
-
-public class CalculatorWithCounterAutoCompositeMain {
+public class CalculatorWithCounterAutoCompositeInterfaceMain {
     public static void main(String[] args) {
-        CalculatorWithCounterAutoComposite withOperator = new CalculatorWithCounterAutoComposite(new CalculatorWithOperator());//
-        CalculatorWithCounterAutoComposite withMathCopy = new CalculatorWithCounterAutoComposite(new CalculatorWithMathCopy());
-        CalculatorWithCounterAutoComposite withMathExtends = new CalculatorWithCounterAutoComposite(new CalculatorWithMathExtends());
-        //не совсем понял создание объекта в объекте. Понятно, что делегируем, но всё же.
+        CalculatorWithCounterAutoCompositeInterface withOperator = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithOperator());//
+        CalculatorWithCounterAutoCompositeInterface withMathCopy = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithMathCopy());
+        CalculatorWithCounterAutoCompositeInterface withMathExtends = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithMathExtends());
         Scanner sc = new Scanner(System.in);
         double a = 4.1;
         double b = 15;

@@ -1,6 +1,8 @@
 package home_work_3.calcs.simple;
 
-public class CalculatorWithMathCopy {
+import home_work_3.calcs.api.ICalculator;
+
+public class CalculatorWithMathCopy implements ICalculator {
     public static void main(String[] args) {
 
     }
@@ -23,14 +25,21 @@ public class CalculatorWithMathCopy {
         return Math.pow(a,b);
     }
 
-    public double abs(double a){
-        return Math.abs(a);
+    public void abs(double a){
+        Math.abs(a);
+    }
+
+    @Override
+    public double root(double a, double b) {
+        if(a<0 && b%2 == 0){
+            System.out.println("Ошибка");
+            return 0;
+        }else {
+            return Math.pow(a, (1 / b));
+        }
     }
 
     public double root(double a){
         return Math.sqrt(a);
-    }
-    public double cbrt(double a){
-        return Math.cbrt(a);
     }
 }

@@ -1,4 +1,4 @@
-package home_work_3.calcs.simple;
+package home_work_3.runners;
 
 public class WithoutCalculatorMain {
     public static void main(String[] args) {
