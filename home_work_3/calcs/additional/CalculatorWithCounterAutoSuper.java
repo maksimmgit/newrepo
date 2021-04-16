@@ -3,7 +3,7 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
-    long count;
+    public long count;
     public void incrementCountOperation(){
         count++;
     }

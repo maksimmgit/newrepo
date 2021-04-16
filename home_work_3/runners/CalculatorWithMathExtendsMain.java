@@ -1,11 +1,10 @@
-package home_work_3.calcs.additional;
+package home_work_3.runners;
 
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
-public class CalculatorWithCounterAutoSuperMain {
+public class CalculatorWithMathExtendsMain {
     public static void main(String[] args) {
-        CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
-
+        CalculatorWithMathExtends calc = new CalculatorWithMathExtends();
         double a = 4.1;
         double b = 15;
         double c = 7;
@@ -14,6 +13,6 @@ public class CalculatorWithCounterAutoSuperMain {
         double pow = 2;
         double result11 = calc.addition(calc.addition(a,calc.mult(b,c)), calc.pow(calc.divide(d,e),pow));
         System.out.println(result11);
-        System.out.println(calc.count);
+
     }
 }

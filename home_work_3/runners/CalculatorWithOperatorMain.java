@@ -1,8 +1,10 @@
-package home_work_3.calcs.simple;
+package home_work_3.runners;
 
-public class CalculatorWithMathCopyMain {
+import home_work_3.calcs.simple.CalculatorWithOperator;
+
+public class CalculatorWithOperatorMain {
     public static void main(String[] args) {
-        CalculatorWithMathCopy calc = new CalculatorWithMathCopy();
+        CalculatorWithOperator calc = new CalculatorWithOperator();
         double a = 4.1;
         double b = 15;
         double c = 7;
