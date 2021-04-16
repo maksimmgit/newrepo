@@ -3,7 +3,7 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
-    long count = 0;
+    long count; //необязательно инициализировать
 
 
     public void incrementCountOperation(){
@@ -12,7 +12,7 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
 
 
     public long getCountOperation(){
-        return count;
-    }
+        return this.count;
+    }//добавил this. когда к  пемеренной this не ставим
 
 }

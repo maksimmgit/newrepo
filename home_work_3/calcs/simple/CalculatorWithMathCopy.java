@@ -12,8 +12,7 @@ public class CalculatorWithMathCopy {
     }
 
     public double subt(double a, double b){
-
-        return 0;
+        return a-b;
     }
     public double addition(double a, double b){
 

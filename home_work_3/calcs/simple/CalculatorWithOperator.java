@@ -15,24 +15,30 @@ public class CalculatorWithOperator {
 
 
     public double subt(double a, double b){
-
-        return 0;
+        return a-b;
     }
 
 
     public double addition(double a, double b){
-
         return a+b;
     }
 
 
 
-    /**
-     *  @param a
-     * @param b
-     * @return
-     */
+/*
+второй вариант
+
+
+double result = 1;
+for(int i = 1;i < b; i++){
+result*=a;
+return result;
+}
+ */
     public double pow(double a, double b){
+        if (b == 1){
+            return a;
+        }
         int y;
         double result = a;
         int x = 1;
@@ -45,16 +51,15 @@ public class CalculatorWithOperator {
 
     /**
      * Использование тернарного оператора
-     * @param a
+
      */
     public void abs(double a){
         a = (a<0?-a:a);
     }
 
     /**
-     * Извлечение корня. При отрицательном a и чётном b операция невозможна.
-     * @param a
-     * @param b
+     * Извлечение любого корня. При отрицательном a и чётном b операция невозможна.
+
      */
     public double root(double a, double b){
         if(a<0 && b%2 == 0){
