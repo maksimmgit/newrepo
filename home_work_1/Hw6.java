@@ -1,6 +1,6 @@
 package home_work_1;
 
-public class hw6 {
+public class Hw6 {
 
     public static void main(String[] args) {
         int[] numbers = {3, 2, 3, 5, 7, 8, 9, 6, 4, 0};

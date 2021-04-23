@@ -38,6 +38,17 @@ public class CalculatorWithCounterAutoComposite {
         this.withMathExtends = calctype;
     }
 
+
+    /*
+    if(calc1 != null){
+    return calc1.plus(a,b)
+    }else if (calc 2!= null){
+    retunr calc2.plus(a,b)}
+    else{
+    retunr calc3.plus(a,b)
+    }
+
+     */
     public double divide(double a, double b){
         incrementCountOperation();
         if(type == 1){
@@ -86,6 +97,9 @@ public class CalculatorWithCounterAutoComposite {
         }else
             return withMathExtends.pow(a,b);
     }
+
+
+    //Это криво или сделать возвращаемым?
     public void abs(double a){
         incrementCountOperation();
         if(type == 1){
@@ -95,7 +109,7 @@ public class CalculatorWithCounterAutoComposite {
         }else
             withMathExtends.abs(a);
 
-        //Это криво или сделать возвращаемым?
+
     }
 
     public double root(double a, double b){

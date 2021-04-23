@@ -29,8 +29,6 @@ public class CalculatorWithOperator implements ICalculator {
 
 /*
 второй вариант
-
-
 double result = 1;
 for(int i = 1;i < b; i++){
 result*=a;
@@ -55,8 +53,9 @@ return result;
      * Использование тернарного оператора
 
      */
-    public void abs(double a){
+    public double abs(double a){
         a = (a<0?-a:a);
+        return a;
     }
 
     /**

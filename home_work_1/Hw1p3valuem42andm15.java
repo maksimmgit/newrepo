@@ -1,6 +1,6 @@
 package home_work_1;
 
-public class hw1p3valuem42andm15 {
+public class Hw1p3valuem42andm15 {
     public static void main(String[] args) {
         int a = -42; //11111111111111111111111111010110
         int b = -15; //11111111111111111111111111110001

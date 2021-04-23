@@ -9,10 +9,9 @@ import java.util.Scanner;
 
 public class CalculatorWithCounterAutoCompositeMain {
     public static void main(String[] args) {
-        CalculatorWithCounterAutoComposite withOperator = new CalculatorWithCounterAutoComposite(new CalculatorWithOperator());//
+        CalculatorWithCounterAutoComposite withOperator = new CalculatorWithCounterAutoComposite(new CalculatorWithOperator());
         CalculatorWithCounterAutoComposite withMathCopy = new CalculatorWithCounterAutoComposite(new CalculatorWithMathCopy());
         CalculatorWithCounterAutoComposite withMathExtends = new CalculatorWithCounterAutoComposite(new CalculatorWithMathExtends());
-        //не совсем понял создание объекта в объекте. Понятно, что делегируем, но всё же.
         Scanner sc = new Scanner(System.in);
         double a = 4.1;
         double b = 15;

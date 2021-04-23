@@ -1,6 +1,6 @@
 package home_work_1;
 
-public class hw2 {
+public class Hw2 {
     public static void main(String[] args) {
         int result1 = 5+2/8; //Ответ 5. 2/8 обычная математика и будет 0
         int result2 = (5+2)/8; // Ответ 0. Сначала скобки, потом 7/8 и будет 0.

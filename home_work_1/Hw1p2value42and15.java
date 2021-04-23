@@ -1,6 +1,6 @@
 package home_work_1;
 
-public class hw1p2value42and15 {
+public class Hw1p2value42and15 {
     public static void main(String[] args) {
         int a = 42; //101010
         int b = 15; //1111

@@ -25,8 +25,8 @@ public class CalculatorWithMathCopy implements ICalculator {
         return Math.pow(a,b);
     }
 
-    public void abs(double a){
-        Math.abs(a);
+    public double abs(double a){
+        return Math.abs(a);
     }
 
     @Override

@@ -2,9 +2,23 @@ package home_work_3.calcs.additional;
 
 import home_work_3.calcs.api.ICalculator;
 
-public class CalculatorWithCounterAutoCompositeInterface implements ICalculator{
-    private ICalculator iCalculator;
-    public long count;
+public class CalculatorWithCounterAutoDecorator implements ICalculator {
+
+
+    private final ICalculator calc;
+    private long count;
+
+
+    public CalculatorWithCounterAutoDecorator(ICalculator calc){
+        this.calc = calc;
+    }
+
+
+    public ICalculator getCalculator(){
+        return this.calc;
+    }
+
+
     public void incrementCountOperation(){
         count++;
     }
@@ -12,49 +26,40 @@ public class CalculatorWithCounterAutoCompositeInterface implements ICalculator{
         return this.count;
     }
 
-    public CalculatorWithCounterAutoCompositeInterface (ICalculator iCalculator){
-        this.iCalculator = iCalculator;
-    }
 
-    @Override
+
     public double divide(double a, double b) {
         incrementCountOperation();
-        return iCalculator.divide(a, b);
+        return calc.divide(a,b);
     }
 
-    @Override
     public double mult(double a, double b) {
         incrementCountOperation();
-        return iCalculator.mult(a,b);
+        return calc.mult(a,b);
     }
 
-    @Override
     public double subt(double a, double b) {
         incrementCountOperation();
-        return iCalculator.subt(a,b);
+        return calc.subt(a,b);
     }
 
-    @Override
     public double addition(double a, double b) {
         incrementCountOperation();
-        return iCalculator.addition(a,b);
+        return calc.addition(a,b);
     }
 
-    @Override
     public double pow(double a, double b) {
         incrementCountOperation();
-        return iCalculator.pow(a,b);
+        return calc.pow(a,b);
     }
 
-    @Override
     public double abs(double a) {
         incrementCountOperation();
-        return iCalculator.abs(a);
+        return calc.abs(a);
     }
 
-    @Override
     public double root(double a, double b) {
         incrementCountOperation();
-        return iCalculator.root(a,b);
+        return calc.root(a,b);
     }
 }

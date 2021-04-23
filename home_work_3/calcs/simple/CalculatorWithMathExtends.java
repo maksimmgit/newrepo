@@ -10,8 +10,9 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
     }
 
     @Override
-    public void abs(double a) {
+    public double abs(double a) {
         super.abs(a);
+        return a;
     }
 
     @Override

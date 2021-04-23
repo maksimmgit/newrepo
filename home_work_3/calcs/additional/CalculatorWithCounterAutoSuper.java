@@ -13,13 +13,13 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     @Override
     public double pow(double a, double b) {
         incrementCountOperation();
-        return super.pow(a, b);
+        return super.pow(a, b);//через super Обращаемся к методам родительского класса.
     }
 
     @Override
-    public void abs(double a) {
+    public double abs(double a) {
         incrementCountOperation();
-        super.abs(a);
+        return super.abs(a);
     }
 
     @Override
