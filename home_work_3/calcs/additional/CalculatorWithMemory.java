@@ -11,17 +11,6 @@ public class CalculatorWithMemory implements ICalculator {
     public double tempMemory;
 
 
-
-    public void incrementCountOperation(){
-        count++;
-    }
-
-
-    public long getCountOperation(){
-        return this.count;
-    }
-
-
     public CalculatorWithMemory(ICalculator calculator) {
         this.calc = calculator;
     }

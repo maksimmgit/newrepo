@@ -7,9 +7,8 @@ public class Hw3one {
         System.out.println(x);
         System.out.println(y);
     }
-    static int max(int a, int b){
+    public static int max(int a, int b){
         return Math.max(a, b);
     }
 
 }
-//пытаюсь практиковаться в методах, не обращайте внимание

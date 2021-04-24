@@ -19,7 +19,7 @@ public class Hw6 {
                 else if (i == 6)
                     phone += "-";
 
-                phone = phone + numbers[i];
+                phone += numbers[i];
             }
 
 

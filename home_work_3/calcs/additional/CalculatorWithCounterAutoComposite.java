@@ -14,7 +14,6 @@ public class CalculatorWithCounterAutoComposite {
     public long getCountOperation(){
         return this.count;
     }
-    public int type;
 
     /*
     Объявление полей классов, которым делегируем расчёт.
@@ -24,45 +23,33 @@ public class CalculatorWithCounterAutoComposite {
     private CalculatorWithMathExtends withMathExtends;
 
     public CalculatorWithCounterAutoComposite (CalculatorWithOperator calctype) {
-        type = 1;
         this.withOperator = calctype;
     }
 
     public CalculatorWithCounterAutoComposite (CalculatorWithMathCopy calctype) {
-        type = 2;
         this.withMathCopy = calctype;
     }
 
     public CalculatorWithCounterAutoComposite (CalculatorWithMathExtends calctype) {
-        type = 3;
         this.withMathExtends = calctype;
     }
 
 
-    /*
-    if(calc1 != null){
-    return calc1.plus(a,b)
-    }else if (calc 2!= null){
-    retunr calc2.plus(a,b)}
-    else{
-    retunr calc3.plus(a,b)
-    }
 
-     */
     public double divide(double a, double b){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             return withOperator.divide(a,b);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             return withMathCopy.divide(a,b);
         }else
             return withMathExtends.divide(a,b);
     }
     public double mult(double a, double b){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             return withOperator.mult(a,b);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             return withMathCopy.mult(a,b);
         }else
             return withMathExtends.mult(a,b);
@@ -70,9 +57,9 @@ public class CalculatorWithCounterAutoComposite {
 
     public double subt(double a, double b){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             return withOperator.subt(a,b);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             return withMathCopy.subt(a,b);
         }else
             return withMathExtends.subt(a,b);
@@ -80,9 +67,9 @@ public class CalculatorWithCounterAutoComposite {
 
     public double addition(double a, double b){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             return withOperator.addition(a,b);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             return withMathCopy.addition(a,b);
         }else
             return withMathExtends.addition(a,b);
@@ -90,21 +77,21 @@ public class CalculatorWithCounterAutoComposite {
 
     public double pow(double a, double b){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             return withOperator.pow(a,b);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             return withMathCopy.pow(a,b);
         }else
             return withMathExtends.pow(a,b);
     }
 
 
-    //Это криво или сделать возвращаемым?
+
     public void abs(double a){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             withOperator.abs(a);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             withMathCopy.abs(a);
         }else
             withMathExtends.abs(a);
@@ -114,9 +101,9 @@ public class CalculatorWithCounterAutoComposite {
 
     public double root(double a, double b){
         incrementCountOperation();
-        if(type == 1){
+        if(withOperator != null){
             return withOperator.root(a,b);
-        }else if(type == 2){
+        }else if(withMathCopy != null){
             return withMathCopy.root(a);
         }else
             return withMathExtends.root(a,b);

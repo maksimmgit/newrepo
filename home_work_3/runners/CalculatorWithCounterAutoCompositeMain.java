@@ -26,16 +26,16 @@ public class CalculatorWithCounterAutoCompositeMain {
         int choose = sc.nextInt();
         if(choose == 1){
             double result11 = withOperator.addition(withOperator.addition(a,withOperator.mult(b,c)), withOperator.pow(withOperator.divide(d,e),pow));
-            System.out.println(result11);
-            System.out.println(withOperator.count);
+            System.out.println("Ответ: " + result11);
+            System.out.println("Количество операций: " + withOperator.count);
         }else if(choose == 2){
             double result11 = withMathCopy.addition(withMathCopy.addition(a,withMathCopy.mult(b,c)), withMathCopy.pow(withMathCopy.divide(d,e),pow));
-            System.out.println(result11);
-            System.out.println(withMathCopy.count);
+            System.out.println("Ответ: " + result11);
+            System.out.println("Количество операций: " + withMathCopy.count);
         }else if(choose == 3){
             double result11 = withMathExtends.addition(withMathExtends.addition(a,withMathExtends.mult(b,c)), withMathExtends.pow(withMathExtends.divide(d,e),pow));
-            System.out.println(result11);
-            System.out.println(withMathExtends.count);
+            System.out.println("Ответ: " + result11);
+            System.out.println("Количество операций: " + withMathExtends.count);
         }else{
             System.out.println("Проверьте ваш ввод.");
         }

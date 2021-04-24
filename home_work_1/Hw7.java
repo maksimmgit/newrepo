@@ -1,5 +1,6 @@
 package home_work_1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hw7 {
@@ -16,7 +17,6 @@ public class Hw7 {
         String realnumber = "";
         int[] numberar = new int[8];
         int i = 0;
-        byte positive = 0;
         if(number >0) {
             while (number > 0) {
                 numberar[i] = number % 2;
@@ -33,22 +33,28 @@ public class Hw7 {
         else if(number <0) {
             number = (byte) Math.abs(number);
             while (number > 0) {
-                numberar[i] = number % 2;
+                /*
+                из-за кривого кода пришлось здесь реализовывать сразу правильную запись чисел в массив,
+                а не разворот как при положительном числе выше.
+                */
+                numberar[numberar.length - 1 - i]  = number % 2;
                 number = (byte) (number / 2);
                 i++;
             }
-            String temp = "";
-            for (int m = numberar.length - 1; m >= 0; m--) {
-                if(numberar[m] == 0) {
-                    temp += "1";
-                }
-                else if(numberar[m] == 1){
-                    temp += "0";
-                }
-               // Дальше не разобрался как прибавить 1 к полученному числу с учётом переноса единиц.
-
+            for (int n = 0; n < numberar.length; n++) {
+                numberar[n] = numberar[n] == 1 ? 0 : 1;
             }
-
+            for (int n = 0; n < numberar.length; n++) {
+                if (numberar[numberar.length - 1 - n] == 0) {
+                    numberar[numberar.length - 1 - n]=1;
+                    break;
+                }else{
+                    numberar[numberar.length - 1 - n]=0;
+                }
+            }
+            for (int j : numberar) {
+                realnumber += j;
+            }
         }
         return realnumber;
     }

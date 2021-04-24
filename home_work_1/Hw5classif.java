@@ -6,15 +6,18 @@ import java.util.Scanner;
 public class Hw5classif {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Имя?");
         String name = sc.nextLine();
-        if(Objects.equals("Вася", name)) {
+        final String vs = "Вася";
+        final String an = "Анастасия";
+        if(Objects.equals(vs, name)) {
             System.out.println("Привет!");
             System.out.println("Я тебя так долго ждал");
         }
-            if(Objects.equals("Анастасия", name)){
+            if(Objects.equals(an, name)){
                 System.out.println("Я тебя так долго ждал");
             }
-                if(!(Objects.equals("Анастасия", name)) && !(Objects.equals("Вася", name))){
+                if(!(Objects.equals(an, name)) && !(Objects.equals(vs, name))){
                     System.out.println("Добрый день, а вы кто?");
                 }
 

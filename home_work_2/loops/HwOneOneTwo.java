@@ -9,13 +9,13 @@ public class HwOneOneTwo {
         if(sc.hasNextLong()) {
             long a = sc.nextLong();
             if (a > 16) {
-                System.out.println("Произойдёт переполнение. Введите меньше 16");
+                System.out.println("Произойдёт переполнение. Введите меньше 17");
             } else {
                 System.out.println(factorial(a));
             }
         }
         else {
-            System.out.println("На данный момент обрабатываются числа до 16");
+            System.out.println("На данный момент обрабатываются числа до 16 включительно");
         }
 
 
