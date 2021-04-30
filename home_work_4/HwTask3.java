@@ -23,12 +23,15 @@ public class HwTask3 {
         long seconds = 1000;
         long temp;
         if(shortFormat){
+            //расчёт времени самым простым способом
             int hour = (int) (millisecond/hours);
             temp = (millisecond - hour*hours);
             int min = (int) (temp/mins);
             temp -=  min*mins;
             int sec = (int) (temp/seconds);
             temp -= sec*seconds;
+
+            //сборка строк
             stringB.append(temp);
             if(temp/100 == 0){
                 stringB.insert(0,0);
@@ -36,22 +39,26 @@ public class HwTask3 {
                     stringB.insert(0,0);
                 }
             }
+
+
             stringB.insert(0, ".").insert(0, sec);
             if(sec/10 == 0){
                 stringB.insert(0,0);
             }
+
+
             stringB.insert(0, ".").insert(0, min);
             if(min/10 == 0){
                 stringB.insert(0,0);
             }
+
+
             stringB.insert(0, ".").insert(0, hour);
             if(hour/10 == 0){
                 stringB.insert(0,0);
             }
 
         }else{
-
-
             int hour = (int) (millisecond/hours);
             stringB.append(hour).append(hourWord(hour));
             temp = (millisecond - hour*hours);
