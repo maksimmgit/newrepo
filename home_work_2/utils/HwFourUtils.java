@@ -8,7 +8,7 @@ public class HwFourUtils {
         int[] first = {1,2,3,4,5,6};
         int[] second = {1,1,1,1};
         int[] third = {9,1,5,99,9,9};
-        int[] fourth = {};
+        int[] fourth = {9,8,5,6,4,10,45,0,-10};
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите тип сортировки.");
         System.out.println("1. Пузырьковая");
@@ -51,13 +51,15 @@ public class HwFourUtils {
     }
     public static void bubble(int[] container){
         System.out.println(Arrays.toString(container));
-        for(int i = 0; i<container.length-1;i++){
-            for (int j = 0;j<container.length-i-1;j++){
-                if(container[j]>container[i]){
-                    int temp = container[j];
-                    container[j] = container[i];
-                    container[j+1] = temp;
+        for(int i = 0; i<container.length;i++){
+            int min = i;
+            for (int j = i;j<container.length;j++){
+                if(container[min]>container[j]){
+                    min = j;
                 }
+                int temp = container[i];
+                container[i] = container[min];
+                container[min] = temp;
             }
         }
         System.out.println(Arrays.toString(container));
