@@ -42,13 +42,13 @@ public class DataMain {
 
          */
 
-        /*
+
         //пункт 9, сортировка с помощью comparator
         StringComparator comparator = new StringComparator();
         container.sort(comparator);
         System.out.println(container.toString());
 
-         */
+
 
 
 
