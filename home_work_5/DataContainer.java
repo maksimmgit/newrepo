@@ -197,5 +197,35 @@ public class DataContainer<T> {
     }
 
 
+    //13Реализовать в DataContainer интерфейс Iterable
+
+    /**
+     *
+     * @return  it - возвращает интерфейс(?)
+     * С помощью next() получаем следующий элемент
+     * С помощью hasNext() проверяем существует ли он вообще.
+     * Запуск в очередности hasNext()->next(), иначе ошибка NoSuchElementException
+     *
+     */
+    public Iterator<T> iterator(){
+        Iterator<T> it = new Iterator<>() {
+
+            private int currentIndex;
+
+
+            @Override
+            public boolean hasNext() {
+                return currentIndex< data.length && data[currentIndex] !=null;
+            }
+
+            @Override
+            public T next() {
+                return data[currentIndex++];
+            }
+
+        };  //почему?
+        return it;
+    }
+
 
 }
