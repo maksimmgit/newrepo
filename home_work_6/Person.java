@@ -1,17 +1,25 @@
 package home_work_6;
 
-import java.util.ArrayList;
-import java.util.List;
+import home_work_6.utils.Generators;
 
 public class Person {
     private String nick;
     private String password;    //5 to 10 symbols
 
-    //конструктор
-    public Person(String nick, String password) {
-        this.nick = nick;
-        this.password = password;
+    //конструктор ошибочный? при создании с помощью сапплаера посылает.
+    /*
+    public Person(T nick, T password) {
+        this.nick = Generators.randomNameGenerator();
+        this.password = Generators.randomPassGenerator();
     }
+
+     */
+
+    public Person() {
+        this.nick = Generators.randomNameGenerator();
+        this.password = Generators.randomPassGenerator();
+    }
+
 
     public String getNick() {
         return nick;
@@ -36,4 +44,5 @@ public class Person {
                 ", password='" + password + '\'' +
                 '}';
     }
+
 }

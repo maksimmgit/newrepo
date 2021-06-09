@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
-public class DataContainer<T> {
+public class DataContainer<T>{
 
     private T[] data;
 
@@ -101,10 +101,10 @@ public class DataContainer<T> {
         return false;
     }
 
-
-    public T[] getList() {
-        return data;
-    }
+//       //поставить копию?
+//   public T[] getList() {
+//       return data;
+//   }
 
 
 
