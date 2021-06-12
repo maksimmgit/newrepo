@@ -15,7 +15,7 @@ public class UtilsList<T>   {
     public UtilsList(T[] init){
         this.data = init;
     }
-    int listLength = 100;
+    final private int listLength = 100;
 
     public UtilsList() {
         this.data = data;
@@ -193,7 +193,7 @@ public class UtilsList<T>   {
     /**
      *
      * @param collection принимает коллекцию (сохраняется в переменную выше) и обрабатывает её итератором
-     * @param i код для выбора. 0 перебирает коллекцию, 1 удаляет, остальные приводят к сообщению об ошибке.
+     * @param i  принимает код для выбора. 0 перебирает коллекцию, 1 удаляет, остальные приводят к сообщению об ошибке.
      *          можно было бы через try catch попробовать в принципе
      */
     public void iter(Collection<T> collection, int i){

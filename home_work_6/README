@@ -1,0 +1,23 @@
+1.
+    1.1 Создан класс Person
+    1.2 Созданы классы Animal
+    Генераторы имен, паролей, случайных чисел для длины в классе utils/Generators
+
+2.
+    2.1 Создан компаратор comparators/PasswordUserComparator для сравнения паролей пользователей.
+    2.2 Создан компаратор comparators/UserNickComparator для последующего сравнения имен пользователей
+    2.3 Создан компаратор comparators/AnimalNickComparator для сравнения кличек животных
+    2.4 Создан компаратор comparators/AnimalAgeComparator для сравнения возраста животных
+
+3.
+    3.1 Поле с количеством генерируемых значений находится в классе UtilsList, listLength.
+    3.2.* Методы созданы в классе UtilsList
+    3.3 Методы сортировки в классе UtilsList
+    3.4 Время замеряется вызовом jdk System.currentTimeMillis().
+    3.4.2.1 и 3.4.3.1 Итерирование коллекции с помощью итератора в классе UtilsList, метод iter
+    3.4.2.2. Итерирование с помощью fori, класс UtilsList, метод collectionCheck
+    3.4.3.2. Удаление всех элементов коллекции с помощью clear(), класс UtilsList, метод collectionRemove
+
+    В классе Main можно проверить выполнение.
+
+
