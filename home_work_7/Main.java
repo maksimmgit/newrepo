@@ -35,7 +35,7 @@ public class Main {
         //просим проверить лист
         //fileReader.wordsTop(10, list);
 
-        //easySearch
+        //easySearch7
         System.out.println("Easysearch result");
         EasySearch easySearch = new EasySearch();
         easySearch.easySearch("и", fileReader.allWords(fileReader.reader(Path.of("src\\home_work_7\\files\\test.txt"))));
