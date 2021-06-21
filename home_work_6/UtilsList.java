@@ -4,6 +4,11 @@ import home_work_6.comparators.AnimalAgeComparator;
 import home_work_6.comparators.AnimalNickComparator;
 import home_work_6.comparators.PasswordUserComparator;
 import home_work_6.comparators.UserNickComparator;
+import home_work_6.dto.Animal;
+import home_work_6.dto.Person;
+import home_work_6.suppliers.AnimalSupplier;
+import home_work_6.suppliers.PersonSupplier;
+import home_work_6.utils.Generators;
 ;
 
 import java.util.*;
@@ -15,7 +20,7 @@ public class UtilsList<T>   {
     public UtilsList(T[] init){
         this.data = init;
     }
-    final private int listLength = 100;
+    final private int listLength = 1000;
 
     public UtilsList() {
         this.data = data;
@@ -23,9 +28,9 @@ public class UtilsList<T>   {
 
 
 
-
-    Supplier<Person> random = Person::new;
-    Supplier<Animal> random1 = Animal::new;
+    //Переделаны генераторы, созданы сапплаеры. Генераторы коллекций планирую передалать по аналогии с разбором на занятии при наличии свободного времени
+    Supplier<Person> random = new PersonSupplier();
+    Supplier<Animal> random1 = new AnimalSupplier();
     List<Person> persList = personList(listLength);
     List<Animal> animList = animalList(listLength);
 
@@ -41,8 +46,9 @@ public class UtilsList<T>   {
         for (int i = 0; i < listLength; i++) {
             list.add(random.get());
         }
-        long finish = System.currentTimeMillis();
-        System.out.println("Операция заполнение  " + list.getClass().getSimpleName() + " заняла " + (finish - start) + " МС");
+        long stop = System.currentTimeMillis();
+        System.out.printf("Операция заполнение  " + list.getClass().getSimpleName() + " заняла %d mc%n", (stop - start));
+
         return list;
     }
 
@@ -98,8 +104,8 @@ public class UtilsList<T>   {
         for (int i = 0; i < listLength; i++) {
             list.add(random1.get());
         }
-        long finish = System.currentTimeMillis();
-        System.out.println("Операция заполнение списка животных " + list.getClass().getSimpleName() + " заняла " + (finish - start) + " мс");
+        long stop = System.currentTimeMillis();
+        System.out.printf("Операция заполнение списка животных " + list.getClass().getSimpleName() + " заняла %d mc%n", (stop - start));
         return list;
     }
 
@@ -155,8 +161,8 @@ public class UtilsList<T>   {
     public void collectionSortPassword() {
         long start = System.currentTimeMillis();
         persList.sort(new PasswordUserComparator());
-        long finish = System.currentTimeMillis();
-        System.out.println("Сортировка паролей юзеров  " + persList.getClass().getSimpleName() + " 1 компаратором заняла " + (finish - start) + " мс");
+        long stop = System.currentTimeMillis();
+        System.out.printf("Сортировка паролей юзеров  " + persList.getClass().getSimpleName() + " 1 компаратором заняла %d mc%n", (stop - start));
         System.out.println(persList.toString());
     }
 
@@ -167,28 +173,28 @@ public class UtilsList<T>   {
     public void collectionSortUserNick() {
         long start = System.currentTimeMillis();
         persList.sort(new PasswordUserComparator().thenComparing(new UserNickComparator()));
-        long finish = System.currentTimeMillis();
-        System.out.println("Сортировка паролей и ников" + persList.getClass().getSimpleName() + " 2 компараторами заняла " + (finish - start) + " мс");
+        long stop = System.currentTimeMillis();
+        System.out.printf("Сортировка паролей и ников" + persList.getClass().getSimpleName() + " 2 компараторами заняла %d mc%n", (stop - start));
         System.out.println(persList.toString());
     }
 
     public void collectionSortAnimalAge() {
         long start = System.currentTimeMillis();
         animList.sort(new AnimalAgeComparator());
-        long finish = System.currentTimeMillis();
-
-        System.out.println("Сортировка возраста животных" + animList.getClass().getSimpleName() + " 1 компаратором заняла " + (finish - start) + " мс");
-
+        long stop = System.currentTimeMillis();
+        System.out.printf("Сортировка возраста животных" + animList.getClass().getSimpleName() + " 1 компаратором %d mc%n", (stop - start));
         System.out.println(animList.toString());
     }
 
     public void collectionSortAnimalAgeNick() {
         long start = System.currentTimeMillis();
         animList.sort(new AnimalAgeComparator().thenComparing(new AnimalNickComparator()));
-        long finish = System.currentTimeMillis();
-        System.out.println("Сортировка возраста животных, а потом ников" + animList.getClass().getSimpleName() + " 2 компараторами заняла " + (finish - start) + " мс");
+        long stop = System.currentTimeMillis();
+        System.out.printf("Сортировка возраста животных, а потом ников" + animList.getClass().getSimpleName() + " 2 компараторами заняла %d mc%n",stop - start);
         System.out.println(animList.toString());
     }
+
+
 
     /**
      *
@@ -204,15 +210,15 @@ public class UtilsList<T>   {
                 System.out.println(iter1.next());
                 iter1.next();
             }
-            long finish = System.currentTimeMillis();
-            System.out.println(("Операция итерирование  " + collection.getClass().getSimpleName() + " заняла " + (finish - start) + " мс"));
+            long stop = System.currentTimeMillis();
+            System.out.printf("Операция итерирование  " + collection.getClass().getSimpleName() + " заняла %d mc%n", stop - start);
         }else if(i == 1){
             while(iter1.hasNext()){
                 iter1.next();
                 iter1.remove();
             }
-            long finish = System.currentTimeMillis();
-            System.out.println(("Операция удаление с помощью итератора  " + collection.getClass().getSimpleName() + " заняла " + (finish - start) + " мс"));
+            long stop = System.currentTimeMillis();
+            System.out.printf("Операция удаление с помощью итератора  " + collection.getClass().getSimpleName() + " заняла %d mc%n", stop - start);
         }else{
             System.out.println("Неправильный запрос итератора");
         }
@@ -225,15 +231,15 @@ public class UtilsList<T>   {
         for (int i = 0; i < collection.size(); i++) {
             Object obj = toArray[i];
         }
-        long finish = System.currentTimeMillis();
-        System.out.println(("Операция перебор массива без итератора " + collection.getClass().getSimpleName() + " заняла " + (finish - start) + " мс"));
+        long stop = System.currentTimeMillis();
+        System.out.printf("Операция перебор массива без итератора " + collection.getClass().getSimpleName() + " заняла %d mc%n", stop - start);
     }
 
     public void collectionRemove(Collection<T> collection){
         long start = System.currentTimeMillis();
         collection.clear();
-        long finish = System.currentTimeMillis();
-        System.out.println(("Операция удаление коллекции без итератора " + collection.getClass().getSimpleName() + " заняла " + (finish - start) + " мс"));
+        long stop = System.currentTimeMillis();
+        System.out.printf("Операция удаление коллекции без итератора " + collection.getClass().getSimpleName() + " заняла %d mc%n", stop - start);
     }
 
 

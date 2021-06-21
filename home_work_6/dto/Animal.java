@@ -1,4 +1,4 @@
-package home_work_6;
+package home_work_6.dto;
 
 import home_work_6.utils.Generators;
 
@@ -6,18 +6,21 @@ public class Animal {
     private int age;
     private String nick;
 
-/*
-тоже послало
-    public Animal(int age, String nick) {
+//переделать
+    /*
+    public Animal() {
         this.age = Generators.randomAgeGenerator();
         this.nick = Generators.randomNameGenerator();
     }
 
- */
+     */
+    public Animal(int age, String nick) {
+    this.age = age;
+    this.nick = nick;
+    }
 
     public Animal() {
-        this.age = Generators.randomAgeGenerator();
-        this.nick = Generators.randomNameGenerator();
+
     }
 
     public int getAge() {

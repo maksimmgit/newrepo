@@ -1,4 +1,4 @@
-package home_work_6;
+package home_work_6.dto;
 
 import home_work_6.utils.Generators;
 
@@ -6,18 +6,14 @@ public class Person {
     private String nick;
     private String password;    //5 to 10 symbols
 
-    //конструктор ошибочный? при создании с помощью сапплаера посылает.
-    /*
-    public Person(T nick, T password) {
-        this.nick = Generators.randomNameGenerator();
-        this.password = Generators.randomPassGenerator();
+//переделать
+    public Person(String nick, String password) {
+        this.nick = nick;
+        this.password = password;
     }
 
-     */
-
     public Person() {
-        this.nick = Generators.randomNameGenerator();
-        this.password = Generators.randomPassGenerator();
+
     }
 
 
