@@ -1,23 +1,12 @@
 package home_work_7;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class FileReader<T> {
-
-    public boolean fileExist(Path path) {
-        if (Files.exists(path)) {
-            return true;
-        } else {
-            return false;
-
-        }
-
-    }
+public class FileReader {
 
     public String reader(Path path) throws IOException {
         String content = "";
@@ -43,33 +32,49 @@ public class FileReader<T> {
 
 
         return content;
+
     }
 
-
-
-/*
-Из этого родили метод внизу
-    public List allWords(String content){
-        List<String> list = new ArrayList<String>();
-        Set<String> hashSet = new HashSet<>();
-
-        //for(String word:content.split("[^а-яА-я0-9]+")){
-        //разделяем по одному или нескольким пробелам
-        for(String word:content.split("\\s+")){
-            list.add(word);
+    public String readerDirtyString(Path path) throws IOException {
+        String content = "";
+        try {
+            content = new String(Files.readAllBytes(path));
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Ошибка при чтении файла");
         }
-        return list;
+        return content;
     }
-
- */
 
     /**
-     * @param content принимаем очищенную от лишних символов строку
-     * @return возвращаем сет всех вообще слов без привязки к регистру
+     *
+     * @param string принимаем неочищенную строку
+     * @return
      */
-    public List<String> allWords(String content) {
+    public String[] stringCleaner(String string){
+        string = string.replace(",", " ");
+        string = string.replace(".", " ");
+        string = string.replace("!", " ");
+        string = string.replace("?", " ");
+        string = string.replace("\"", " ");
+        string = string.replace("--", " ");
+        string = string.replace(";", " ");
+        string = string.replace(":", " ");
+        string = string.replace("(", " ");
+        string = string.replace(")", " ");
+
+        return string.split("\\s+");
+    }
+    /**
+     *
+     * @param content принимаем очищенную строку
+     * @return возвращаем сет всех вообще слов без привязки
+     */
+    public List<String> allWords(String[] content) {
         //разделяем по одному или нескольким пробелам
-        List<String> list = new ArrayList<>(Arrays.asList(content.split("\\s+")));
+        List<String> list = new ArrayList<>(Arrays.asList(content));
         System.out.println("В тексте использовано " + list.size() + " любых слов.");
         return list;
     }
@@ -81,10 +86,11 @@ public class FileReader<T> {
      * @param content принимаем очищенную от лишних символов строку
      * @return сет уникаальных слов без привязки к регистру
      */
-    public Set<String> uniqueWords(String content) {
-        Set<String> hashSet = new HashSet<>(Arrays.asList(content.split("\\s+")));
+    public Set<String> uniqueWords(String[] content) {
+        //Set<String> hashSet = new HashSet<>(Arrays.asList(content.split("\\s+")));
         //разделяем по одному или нескольким пробелам
 
+        Set<String> hashSet = new HashSet<>(Arrays.asList(content));
         System.out.println("В тексте использовано " + hashSet.size() + " уникальных слов.");
         return hashSet;
     }
