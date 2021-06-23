@@ -5,7 +5,7 @@ import home_work_7.utils.EasySearch;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class RegExSearch {
+public class RegExSearchTest {
 
     static String testString = "привет, как дела!";
     static String testString2 = "привет,какдела!";

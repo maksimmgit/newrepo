@@ -1,0 +1,15 @@
+
+1. Книга по адресу home_work_7/files
+2. Методы для работы с коллекциями в классе home_work_7/FileReader.java
+    2.1 Метод uniqueWords для отображения списка уникальных слов
+    2.2 allWords - создание коллекции всех слов
+        wordsMap - создание мапы на основании коллекции
+        wordsTop - сортировка и вывод N лидирующих слов в тексте
+3.  Интерфейс ISearchEngine по адресу home_work_7/api/
+4.  EasySearch и RegExSearch по адресу home_work_7/utils/
+     4.3 декоратор SearchEnginePunctuationNormalizer по адресу home_work_7/decorators/
+
+5.  -
+6.  Тестирование EasySearch и RegExSearch по адресу homw_work_7/test
+7.  Класс home_work_7/Main, Книги home_work_7/files/
+8.  -

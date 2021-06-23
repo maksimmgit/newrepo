@@ -35,7 +35,7 @@ public class FileReader {
 
     }
 
-    public String readerDirtyString(Path path) throws IOException {
+    public String readerDirtyString(Path path) {
         String content = "";
         try {
             content = new String(Files.readAllBytes(path));
@@ -123,8 +123,6 @@ public class FileReader {
      * @param list список значений "уникальное слово и кол-во употреблений".
      */
     public void wordsTop(int n, List list){
-
-
 
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>> () {
             @Override
