@@ -1,7 +1,1 @@
-Выбрана книга: Traktat_o_zhenskoj_samooborone._Prakticheskoe_posobie.txt
-Поисковый запрос: она
-Количество совпадений: 246
-Выбрана книга: 300-letnjaja_Brachnaja_nochb_Atlantidy.txt
-Выбрана книга: WarAndPeace.txt
-Поисковый запрос: война
-Количество совпадений: 51
+
