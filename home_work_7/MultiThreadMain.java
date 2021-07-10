@@ -72,19 +72,7 @@ public class MultiThreadMain {
             if(sc.hasNextLine()){
                 path = sc.nextLine();
                 System.out.println("Выбрана папка " + path);
-
-                //решил сделать это, чтобы вся работа с папками была в одном методе
-                //
-                //
-                //
-                //
-                //не забыть проверить
                 pathOf = path;
-                //
-                //
-                //
-                //
-                ///////////////////////////////////////////////////////////////////////////////
             }else{
                 System.out.println("Ошибка ввода папки");
             }
@@ -100,7 +88,7 @@ public class MultiThreadMain {
     /**
      *
      * @param pathof папка от пользователя, которую он ввел в методе path()
-     * @return массив книг с напечатанным (не присвоенным) айди. Здесь бы мапу.
+     * @return массив книг с напечатанным (не присвоенным) айди.
      */
     static String[] booksToList(String pathof){
         File path = new File(pathof);
@@ -123,6 +111,7 @@ public class MultiThreadMain {
     static void bufferedWriter(String s) throws IOException {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("src\\home_work_7\\result.txt", true));) {
             writer.write(s + "\n");
+
 
         }catch (IOException e){
             System.out.println("Ошибка во время чтения");
