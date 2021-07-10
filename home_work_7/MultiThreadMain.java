@@ -17,14 +17,11 @@ import static home_work_7.MultiThreadMain.bufferedWriter;
 
 public class MultiThreadMain {
     private static String pathOf;
-    private static String text;
+
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        //String pathof = "src\\home_work_7\\files\\";
-        String searchQuery;
         //обращаемся сразу к двум методам: booksToList чтобы составить список книг из папки, которую получили методом path()
         String[] bookList = booksToList(path());
-        int bookId = 1;
         int bookNumber = 0;
         try{
             System.out.println("Введите ID книги для выбора.");
@@ -40,18 +37,8 @@ public class MultiThreadMain {
                 System.out.println("Ошибка ввода ID");
             }
             //создаем путь для выбранной книги
-            text = Files.readString(Path.of((pathOf + bookList[bookNumber-1])));
+            String text = Files.readString(Path.of((pathOf + bookList[bookNumber - 1])));
             System.out.println("Вы выбрали " + bookList[bookNumber-1]);
-
-            //поиск
-            /*
-            System.out.println();
-            System.out.println("Введите слово для поиска: ");
-            searchQuery = sc.next();
-            System.out.println( " поисковый запрос " + searchQuery);
-            bufferedWriter("Поисковый запрос: " + searchQuery);
-
-             */
             multiThreadSearch(text);
 
 
@@ -66,6 +53,7 @@ public class MultiThreadMain {
 
 
     }
+
 
 
     /**
@@ -85,7 +73,7 @@ public class MultiThreadMain {
                 path = sc.nextLine();
                 System.out.println("Выбрана папка " + path);
 
-                //решил сделать этот костыль, чтобы вся работа с папками была в одном методе
+                //решил сделать это, чтобы вся работа с папками была в одном методе
                 //
                 //
                 //
