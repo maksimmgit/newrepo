@@ -134,6 +134,7 @@ public class MultiThreadMain {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<Long> futureTask = executorService.submit(new SearchCallable(text));
         System.out.println(futureTask.get());//результат
+        executorService.shutdown();
 
     }
 
